@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/((?!api/|static/|_next/|favicon\\.ico|sitemap\\.xml|robots\\.txt).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

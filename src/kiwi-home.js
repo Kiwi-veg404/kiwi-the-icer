@@ -69,6 +69,9 @@ export class KiwiHome extends DDDSuper(LitElement) {
         font-size: var(--ddd-font-size-2xl);
         margin-bottom: var(--ddd-spacing-3);
       }
+      .color-black {
+        color: var(--ddd-theme-default-coalyGray);
+      }
     `];
   }
 
@@ -82,7 +85,7 @@ export class KiwiHome extends DDDSuper(LitElement) {
         
         <div class="welcome-section">
           <h2>Welcome to Kiwi the Icer</h2>
-          <p>
+          <p class="color-black">
             Your ultimate destination for all things hockey! Follow our team's journey 
             through the season with live updates, player stats, schedules, and more.
           </p>

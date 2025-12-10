@@ -28,13 +28,15 @@ export class KiwiHeader extends DDDSuper(LitElement) {
       { path: "/stats", label: "Stats" },
       { path: "/standings", label: "Standings" }
     ];
+    this.logoUrl = "https://tse4.mm.bing.net/th/id/OIP.CH90KfEuJlc6D8Zzb1l2GAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3";
   }
 
   static get properties() {
     return {
       ...super.properties,
       currentRoute: { type: String },
-      navItems: { type: Array }
+      navItems: { type: Array },
+      logoUrl: { type: String }
     };
   }
 
@@ -59,6 +61,12 @@ export class KiwiHeader extends DDDSuper(LitElement) {
         font-size: var(--ddd-font-size-xl);
         font-weight: var(--ddd-font-weight-bold);
         color: var(--ddd-theme-default-skyBlue);
+      }
+      .logo-img {
+        height: 50px; 
+        width: auto;
+        max-width: 200px;
+        object-fit: contain;
       }
       nav {
         display: flex;
@@ -95,7 +103,11 @@ export class KiwiHeader extends DDDSuper(LitElement) {
   render() {
     return html`
       <div class="header-wrapper">
-        <div class="logo"> Kiwi the Icer</div>
+        <img 
+          src="${this.logoUrl}" 
+          alt="Kiwi the Icer Logo" 
+          class="logo-img"
+          @click="${(e) => this.handleClick(e, '/')}">
         <nav>
           ${this.navItems.map(item => html`
             <a 

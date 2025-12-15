@@ -59,14 +59,14 @@ export class KiwiFooter extends DDDSuper(LitElement) {
       .social-link {
         color: var(--ddd-theme-default-skyBlue);
         text-decoration: none;
-        font-size: var(--ddd-font-size-l);
+        font-size: var(--ddd-font-size-sm);
         transition: color 0.3s ease;
       }
       .social-link:hover {
         color: var(--ddd-theme-default-white);
       }
       .copyright {
-        font-size: var(--ddd-font-size-s);
+        font-size: var(--ddd-font-size-xxs);
       }
     `];
   }

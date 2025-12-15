@@ -23,13 +23,15 @@ export class KiwiHome extends DDDSuper(LitElement) {
     super();
     this.teamName = "Kiwi Ice Hawks";
     this.season = "2024-2025";
+    this.heroImage = "https://bloximages.newyork1.vip.townnews.com/psucollegian.com/content/tncms/assets/v3/editorial/0/8e/08ef144e-db92-11ef-b05c-270cbd90b390/6795a5dd55a63.image.jpg?resize=1333%2C888";
   }
 
   static get properties() {
     return {
       ...super.properties,
       teamName: { type: String },
-      season: { type: String }
+      season: { type: String },
+      heroImage: { type: String }
     };
   }
 
@@ -44,31 +46,56 @@ export class KiwiHome extends DDDSuper(LitElement) {
         margin: 0 auto;
       }
       .hero {
-        background: linear-gradient(135deg, var(--ddd-theme-default-navy80) 0%, var(--ddd-theme-default-skyBlue) 100%);
-        color: var(--ddd-theme-default-white);
+        color: white;
         padding: var(--ddd-spacing-8);
         border-radius: var(--ddd-radius-lg);
         text-align: center;
         margin-bottom: var(--ddd-spacing-6);
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        background-color: var(--ddd-theme-default-navyBlue);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
       }
+      
+      .hero h1,
+      .hero p {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+      }
+      
       .hero h1 {
         font-size: var(--ddd-font-size-4xl);
         margin-bottom: var(--ddd-spacing-2);
+        font-weight: bold;
       }
+      
       .hero p {
         font-size: var(--ddd-font-size-xl);
+        font-weight: 500;
       }
+      
       .welcome-section {
         padding: var(--ddd-spacing-4);
         background-color: var(--ddd-theme-default-limestoneLight);
         border-radius: var(--ddd-radius-md);
         margin-bottom: var(--ddd-spacing-4);
       }
+      
       h2 {
         color: var(--ddd-theme-default-navy80);
         font-size: var(--ddd-font-size-2xl);
         margin-bottom: var(--ddd-spacing-3);
       }
+      
       .color-black {
         color: var(--ddd-theme-default-coalyGray);
       }
@@ -78,8 +105,8 @@ export class KiwiHome extends DDDSuper(LitElement) {
   render() {
     return html`
       <div class="home-container">
-        <div class="hero">
-          <h1> ${this.teamName}</h1>
+        <div class="hero" style="background-image: url('${this.heroImage}');">
+          <h1>${this.teamName}</h1>
           <p>Season ${this.season}</p>
         </div>
         

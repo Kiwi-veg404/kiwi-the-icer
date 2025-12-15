@@ -28,7 +28,7 @@ export class KiwiHeader extends DDDSuper(LitElement) {
       { path: "/stats", label: "Stats" },
       { path: "/standings", label: "Standings" }
     ];
-    this.logoUrl = "https://tse4.mm.bing.net/th/id/OIP.CH90KfEuJlc6D8Zzb1l2GAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3";
+    this.logoUrl = "https://ih1.redbubble.net/image.832603374.6820/st,small,507x507-pad,600x600,f8f8f8.u5.jpg";
   }
 
   static get properties() {
@@ -63,7 +63,7 @@ export class KiwiHeader extends DDDSuper(LitElement) {
         color: var(--ddd-theme-default-skyBlue);
       }
       .logo-img {
-        height: 50px; 
+        height: 80px; 
         width: auto;
         max-width: 200px;
         object-fit: contain;

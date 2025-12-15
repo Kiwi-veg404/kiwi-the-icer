@@ -41,56 +41,105 @@ export class KiwiHeader extends DDDSuper(LitElement) {
   }
 
   static get styles() {
-    return [super.styles,
-    css`
-      :host {
-        display: block;
-        background-color: var(--ddd-theme-default-navy80);
-        color: var(--ddd-theme-default-white);
-        box-shadow: var(--ddd-boxShadow-md);
-      }
+  return [super.styles,
+  css`
+    :host {
+      display: block;
+      background-color: var(--ddd-theme-default-navy80);
+      color: var(--ddd-theme-default-white);
+      box-shadow: var(--ddd-boxShadow-md);
+    }
+    .header-wrapper {
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--ddd-spacing-4);
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: var(--ddd-spacing-3);
+    }
+    .logo {
+      font-size: var(--ddd-font-size-xl);
+      font-weight: var(--ddd-font-weight-bold);
+      color: var(--ddd-theme-default-skyBlue);
+      flex-shrink: 0;
+    }
+    .logo-img {
+      height: 60px; 
+      width: auto;
+      max-width: 150px;
+      object-fit: contain;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap; 
+      gap: var(--ddd-spacing-2); 
+      justify-content: flex-end; 
+      flex: 1; 
+      min-width: 0; 
+    }
+    .nav-link {
+      text-decoration: none;
+      color: var(--ddd-theme-default-white);
+      padding: var(--ddd-spacing-2) var(--ddd-spacing-2);
+      border-radius: var(--ddd-radius-sm);
+      transition: all 0.3s ease;
+      font-weight: var(--ddd-font-weight-medium);
+      font-size: var(--ddd-font-size-sm); 
+      white-space: nowrap; 
+      flex-shrink: 0; 
+    }
+    .nav-link:hover {
+      background-color: var(--ddd-theme-default-skyBlue);
+      color: var(--ddd-theme-default-navy80);
+    }
+    .nav-link.active {
+      background-color: var(--ddd-theme-default-skyBlue);
+      color: var(--ddd-theme-default-navy80);
+    }
+
+    
+    @media (max-width: 768px) {
       .header-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: var(--ddd-spacing-4);
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .logo {
-        font-size: var(--ddd-font-size-xl);
-        font-weight: var(--ddd-font-weight-bold);
-        color: var(--ddd-theme-default-skyBlue);
+        justify-content: center; 
+        gap: var(--ddd-spacing-2);
       }
       .logo-img {
-        height: 80px; 
-        width: auto;
-        max-width: 200px;
-        object-fit: contain;
+        height: 50px;
+        max-width: 120px;
       }
       nav {
-        display: flex;
-        gap: var(--ddd-spacing-4);
+        justify-content: center; 
+        width: 100%; 
+        margin-top: var(--ddd-spacing-2);
       }
       .nav-link {
-        text-decoration: none;
-        color: var(--ddd-theme-default-white);
-        padding: var(--ddd-spacing-2) var(--ddd-spacing-3);
-        border-radius: var(--ddd-radius-sm);
-        transition: background-color 0.3s ease;
-        font-weight: var(--ddd-font-weight-medium);
+        padding: var(--ddd-spacing-1) var(--ddd-spacing-2);
+        font-size: var(--ddd-font-size-xs);
       }
-      .nav-link:hover {
-        background-color: var(--ddd-theme-default-skyBlue);
-        color: var(--ddd-theme-default-navy80);
-      }
-      .nav-link.active {
-        background-color: var(--ddd-theme-default-skyBlue);
-        color: var(--ddd-theme-default-navy80);
-      }
-    `];
-  }
+    }
 
+    
+    @media (max-width: 480px) {
+      .header-wrapper {
+        padding: var(--ddd-spacing-3) var(--ddd-spacing-2);
+      }
+      .logo-img {
+        height: 40px;
+        max-width: 100px;
+      }
+      nav {
+        gap: var(--ddd-spacing-1);
+      }
+      .nav-link {
+        padding: var(--ddd-spacing-1);
+        font-size: var(--ddd-font-size-xxs);
+      }
+    }
+  `];
+}
   handleClick(e, path) {
     e.preventDefault();
     this.dispatchEvent(new CustomEvent('navigate', {

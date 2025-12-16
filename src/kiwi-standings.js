@@ -26,12 +26,14 @@ export class KiwiStandings extends DDDSuper(LitElement) {
       { rank: 3, name: "Arctic Wolves", wins: 10, losses: 7, ties: 2, points: 22 },
       { rank: 4, name: "Snow Leopards", wins: 8, losses: 9, ties: 2, points: 18 }
     ];
+    this.heroImage = "https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
   }
 
   static get properties() {
     return {
       ...super.properties,
-      teams: { type: Array }
+      teams: { type: Array },
+      heroImage: { type: String }
     };
   }
 
@@ -45,11 +47,34 @@ export class KiwiStandings extends DDDSuper(LitElement) {
         max-width: 1200px;
         margin: 0 auto;
       }
-      h1 {
-        color: var(--ddd-theme-default-pughBlue);
-        font-size: var(--ddd-font-size-3xl);
-        margin-bottom: var(--ddd-spacing-4);
+      .hero {
+        color: white;
+        padding: var(--ddd-spacing-8);
+        border-radius: var(--ddd-radius-lg);
+        text-align: center;
+        margin-bottom: var(--ddd-spacing-6);
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        background-color: var(--ddd-theme-default-navyBlue);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
       }
+      
+      .hero h1 {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        font-size: var(--ddd-font-size-4xl);
+        font-weight: bold;
+      }
+      
       .standings-list {
         background-color: var(--ddd-theme-default-white);
         border-radius: var(--ddd-radius-md);
@@ -92,7 +117,9 @@ export class KiwiStandings extends DDDSuper(LitElement) {
   render() {
     return html`
       <div class="standings-container">
-        <h1> League Standings</h1>
+        <div class="hero" style="background-image: url('${this.heroImage}');">
+          <h1>League Standings</h1>
+        </div>
         <div class="standings-list">
           <div class="standings-header">
             <div class="rank">Rank</div>

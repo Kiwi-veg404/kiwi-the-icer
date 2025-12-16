@@ -66,7 +66,7 @@ export class KiwiHeader extends DDDSuper(LitElement) {
       flex-shrink: 0;
     }
     .logo-img {
-      height: 60px; 
+      height: 80px; 
       width: auto;
       max-width: 150px;
       object-fit: contain;

@@ -56,7 +56,7 @@ export class KiwiStats extends DDDSuper(LitElement) {
         border-radius: var(--ddd-radius-lg);
         text-align: center;
         margin-bottom: var(--ddd-spacing-6);
-        min-height: 200px;
+        min-height: 240px;
         display: flex;
         flex-direction: column;
         justify-content: center;

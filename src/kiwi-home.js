@@ -51,7 +51,7 @@ export class KiwiHome extends DDDSuper(LitElement) {
         border-radius: var(--ddd-radius-lg);
         text-align: center;
         margin-bottom: var(--ddd-spacing-6);
-        min-height: 300px;
+        min-height: 320px;
         display: flex;
         flex-direction: column;
         justify-content: center;

@@ -41,7 +41,7 @@ export class KiwiPlayerCard extends DDDSuper(LitElement) {
         display: block;
       }
       .card {
-        background: linear-gradient(135deg, var(--ddd-theme-default-navy80) 0%, var(--ddd-theme-default-skyBlue) 100%);
+        background: linear-gradient(135deg, var(--ddd-theme-default-pughBlue) 0%, var(--ddd-theme-default-skyBlue) 100%);
         height: 240px;
         color: var(--ddd-theme-default-white);
         border-radius: var(--ddd-radius-md);

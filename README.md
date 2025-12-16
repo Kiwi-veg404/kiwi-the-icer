@@ -72,7 +72,7 @@ All components follow a consistent naming pattern using the "kiwi" prefix to ide
 ##  DDD Color Palette
 
 The project uses a professional ice hockey theme:
-- **Primary**: `--ddd-theme-default-navy80` (Dark blue)
+- **Primary**: `--ddd-theme-default-pughBlue` (Dark blue)
 - **Accent**: `--ddd-theme-default-skyBlue` (Light blue)
 - **Text**: `--ddd-theme-default-white`, `--ddd-theme-default-coalyGray`
 - **Background**: `--ddd-theme-default-white`, `--ddd-theme-default-limestoneLight`

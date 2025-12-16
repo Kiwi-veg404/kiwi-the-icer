@@ -46,6 +46,12 @@ export class KiwiApp extends DDDSuper(LitElement) {
         min-height: 100vh;
         background-color: var(--ddd-theme-default-white);
       }
+      @media (prefers-color-scheme: dark) {
+        :host {
+          background-color: var(--ddd-theme-default-coalyGray);
+        }
+      }
+
       .app-container {
         display: flex;
         flex-direction: column;

@@ -49,7 +49,7 @@ export class KiwiStats extends DDDSuper(LitElement) {
         margin: 0 auto;
       }
       h1 {
-        color: var(--ddd-theme-default-navy80);
+        color: var(--ddd-theme-default-pughBlue);
         font-size: var(--ddd-font-size-3xl);
         margin-bottom: var(--ddd-spacing-4);
       }
@@ -69,7 +69,7 @@ export class KiwiStats extends DDDSuper(LitElement) {
       .stat-value {
         font-size: var(--ddd-font-size-3xl);
         font-weight: var(--ddd-font-weight-bold);
-        color: var(--ddd-theme-default-navy80);
+        color: var(--ddd-theme-default-pughBlue);
       }
       .stat-label {
         font-size: var(--ddd-font-size-m);

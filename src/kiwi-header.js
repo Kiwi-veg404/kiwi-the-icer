@@ -45,7 +45,7 @@ export class KiwiHeader extends DDDSuper(LitElement) {
   css`
     :host {
       display: block;
-      background-color: var(--ddd-theme-default-navy80);
+      background-color: var(--ddd-theme-default-pughBlue);
       color: var(--ddd-theme-default-white);
       box-shadow: var(--ddd-boxShadow-md);
     }
@@ -93,11 +93,11 @@ export class KiwiHeader extends DDDSuper(LitElement) {
     }
     .nav-link:hover {
       background-color: var(--ddd-theme-default-skyBlue);
-      color: var(--ddd-theme-default-navy80);
+      color: var(--ddd-theme-default-pughBlue);
     }
     .nav-link.active {
       background-color: var(--ddd-theme-default-skyBlue);
-      color: var(--ddd-theme-default-navy80);
+      color: var(--ddd-theme-default-pughBlue);
     }
 
     

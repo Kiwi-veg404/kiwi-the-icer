@@ -35,7 +35,7 @@ export class KiwiFooter extends DDDSuper(LitElement) {
     css`
       :host {
         display: block;
-        background-color: var(--ddd-theme-default-navy80);
+        background-color: var(--ddd-theme-default-pughBlue);
         color: var(--ddd-theme-default-white);
         margin-top: var(--ddd-spacing-8);
       }

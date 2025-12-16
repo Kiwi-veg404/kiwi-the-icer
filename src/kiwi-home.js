@@ -91,7 +91,7 @@ export class KiwiHome extends DDDSuper(LitElement) {
       }
       
       h2 {
-        color: var(--ddd-theme-default-navy80);
+        color: var(--ddd-theme-default-pughBlue);
         font-size: var(--ddd-font-size-2xl);
         margin-bottom: var(--ddd-spacing-3);
       }

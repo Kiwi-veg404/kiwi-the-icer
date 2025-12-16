@@ -45,7 +45,7 @@ export class KiwiGameCard extends DDDSuper(LitElement) {
       .card {
         background-color: var(--ddd-theme-default-white);
         border: var(--ddd-border-md);
-        border-color: var(--ddd-theme-default-navy80);
+        border-color: var(--ddd-theme-default-pughBlue);
         border-radius: var(--ddd-radius-md);
         padding: var(--ddd-spacing-4);
         box-shadow: var(--ddd-boxShadow-sm);
@@ -64,12 +64,12 @@ export class KiwiGameCard extends DDDSuper(LitElement) {
       .date {
         font-size: var(--ddd-font-size-l);
         font-weight: var(--ddd-font-weight-bold);
-        color: var(--ddd-theme-default-navy80);
+        color: var(--ddd-theme-default-pughBlue);
       }
       .location-badge {
         padding: var(--ddd-spacing-1) var(--ddd-spacing-3);
         background-color: var(--ddd-theme-default-skyBlue);
-        color: var(--ddd-theme-default-navy80);
+        color: var(--ddd-theme-default-pughBlue);
         border-radius: var(--ddd-radius-sm);
         font-size: var(--ddd-font-size-s);
         font-weight: var(--ddd-font-weight-medium);

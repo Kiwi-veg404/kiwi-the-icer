@@ -46,7 +46,7 @@ export class KiwiSchedule extends DDDSuper(LitElement) {
         margin: 0 auto;
       }
       h1 {
-        color: var(--ddd-theme-default-navy80);
+        color: var(--ddd-theme-default-pughBlue);
         font-size: var(--ddd-font-size-3xl);
         margin-bottom: var(--ddd-spacing-4);
       }

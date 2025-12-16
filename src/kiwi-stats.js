@@ -25,6 +25,7 @@ export class KiwiStats extends DDDSuper(LitElement) {
     this.ties = 2;
     this.goalsFor = 45;
     this.goalsAgainst = 32;
+    this.heroImage = "https://kubrick.htvapps.com/htv-prod-media.s3.amazonaws.com/images/gettyimages-2207243648-67eca4e0e8a7c.jpg?crop=1.00xw:1.00xh;0,0&resize=900:*";
   }
 
   static get properties() {
@@ -34,7 +35,8 @@ export class KiwiStats extends DDDSuper(LitElement) {
       losses: { type: Number },
       ties: { type: Number },
       goalsFor: { type: Number },
-      goalsAgainst: { type: Number }
+      goalsAgainst: { type: Number },
+      heroImage: { type: String }
     };
   }
 
@@ -48,11 +50,34 @@ export class KiwiStats extends DDDSuper(LitElement) {
         max-width: 1200px;
         margin: 0 auto;
       }
-      h1 {
-        color: var(--ddd-theme-default-pughBlue);
-        font-size: var(--ddd-font-size-3xl);
-        margin-bottom: var(--ddd-spacing-4);
+      .hero {
+        color: white;
+        padding: var(--ddd-spacing-8);
+        border-radius: var(--ddd-radius-lg);
+        text-align: center;
+        margin-bottom: var(--ddd-spacing-6);
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        background-color: var(--ddd-theme-default-navyBlue);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
       }
+      
+      .hero h1 {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        font-size: var(--ddd-font-size-4xl);
+        font-weight: bold;
+      }
+      
       .stats-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -82,7 +107,9 @@ export class KiwiStats extends DDDSuper(LitElement) {
   render() {
     return html`
       <div class="stats-container">
-        <h1> Team Statistics</h1>
+        <div class="hero" style="background-image: url('${this.heroImage}');">
+          <h1>Team Statistics</h1>
+        </div>
         <div class="stats-grid">
           <div class="stat-card">
             <div class="stat-value">${this.wins}</div>

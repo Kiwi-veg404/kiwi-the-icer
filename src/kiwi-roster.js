@@ -27,12 +27,14 @@ export class KiwiRoster extends DDDSuper(LitElement) {
       { name: "Mike Wilson", number: "1", position: "Goalie" },
       { name: "Emily Davis", number: "8", position: "Forward" }
     ];
+    this.heroImage = "https://gopsusports.com/imgproxy/Igb4TbukbhInr7eLiHgplT9nKVmXryPtnDF-rt4UEsA/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvcHN1c3BvcnRzLXByb2QvMjAyNC8wNy8xMC9ycTg2cnJ3S2xkRzJaRFJWOWRFaHNWYW5Ja0k4RHNlc3JhVmFnekNULmpwZw.jpg";
   }
 
   static get properties() {
     return {
       ...super.properties,
-      players: { type: Array }
+      players: { type: Array },
+      heroImage: { type: String }
     };
   }
 
@@ -46,11 +48,34 @@ export class KiwiRoster extends DDDSuper(LitElement) {
         max-width: 1200px;
         margin: 0 auto;
       }
-      h1 {
-        color: var(--ddd-theme-default-pughBlue);
-        font-size: var(--ddd-font-size-3xl);
-        margin-bottom: var(--ddd-spacing-4);
+      .hero {
+        color: white;
+        padding: var(--ddd-spacing-8);
+        border-radius: var(--ddd-radius-lg);
+        text-align: center;
+        margin-bottom: var(--ddd-spacing-6);
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        background-color: var(--ddd-theme-default-navyBlue);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
       }
+      
+      .hero h1 {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        font-size: var(--ddd-font-size-4xl);
+        font-weight: bold;
+      }
+      
       .players-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -63,7 +88,9 @@ export class KiwiRoster extends DDDSuper(LitElement) {
   render() {
     return html`
       <div class="roster-container">
-        <h1> Team Roster</h1>
+        <div class="hero" style="background-image: url('${this.heroImage}');">
+          <h1>Team Roster</h1>
+        </div>
         <div class="players-grid">
           ${this.players.map(player => html`
             <kiwi-player-card
